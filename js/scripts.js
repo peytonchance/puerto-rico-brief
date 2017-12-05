@@ -38,7 +38,10 @@ function buildAEEGraph(){
         ],
         types: {
           Percentage: 'area-spline'
-        }
+        },
+        names: {
+          percentage: 'Percentage of Electricity Operating'
+  }
     },
     axis: {
         x: {
