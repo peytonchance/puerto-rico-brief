@@ -23,9 +23,6 @@ function parseAEEData(AEEData){
 function buildAEEGraph(){
   var aeeGraph = c3.generate({
     bindto: '#aee-graph',
-    size: {
-        height: 480
-      },
       padding: {
   top: 20
 },
@@ -79,7 +76,7 @@ function getCNNFeed(){
 function parseCNNData(CNNdata){
   console.log(CNNdata);
   var html = "<div>";
-  var html = "<h3>CNN reporting on Puerto Rico</h3>"
+  var html = "<h3>CNN on Puerto Rico</h3>"
   var articles = CNNdata["articles"];
 
   for(var i=0, len = articles.length; i < len; i++){
@@ -98,7 +95,7 @@ function getFOXFeed(){
   var FOXurl = 'https://newsapi.org/v2/everything?' +
             'sources=fox-news&' +
             'q=PuertoRico&' +
-            'from=2017-05-20&' +
+            // 'from=2017-05-20&' +
             'sortBy=popularity&' +
             'apiKey=' + myNewsKey;
 
@@ -113,7 +110,7 @@ function getFOXFeed(){
 function parseFOXData(FOXdata){
   console.log(FOXdata);
   var html = "<div>";
-  var html = "<h3>FOX News reporting on Puerto Rico</h3>"
+  var html = "<h3>FOX News on Puerto Rico</h3>"
   var articles = FOXdata["articles"];
 
   for(var i=0, len = articles.length; i < len; i++){
@@ -147,7 +144,7 @@ function getWPFeed(){
 function parseWPData(WPdata){
   console.log(WPdata);
   var html = "<div>";
-  var html = "<h3>The Washington Post reporting on Puerto Rico</h3>"
+  var html = "<h3>The Washington Post on Puerto Rico</h3>"
   var articles = WPdata["articles"];
 
   for(var i=0, len = articles.length; i < len; i++){

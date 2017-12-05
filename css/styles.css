@@ -12,7 +12,7 @@ h3{
 }
 h1{
   font-size: 4em;
-  text-shadow: 1px 1px 15px gray;
+  text-shadow: 1px 1px 2px grey;
 }
 h4{
   font-size: 1em;
@@ -25,7 +25,9 @@ h5{
   font-family: 'Roboto';
   margin-bottom: 25px;
 }
-
+a{
+  color: #285A7C;
+}
 .container{
   padding: 0% 15%;
 }
@@ -105,6 +107,26 @@ h5{
 }
 .buttons{
   margin-top: 30px;
+  text-align: center;
+}
+.custom-btn {
+  -webkit-border-radius: 2;
+  -moz-border-radius: 2;
+  border-radius: 2px;
+  color: #ffffff;
+  background: #285A7C;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.custom-btn:hover {
+  background: #77B8C6;
+  text-decoration: none;
+}
+
+.custom-btn:focus{
+  outline: none;
+  background: #77B8C6;
 }
 
 .hide{
@@ -117,6 +139,48 @@ h5{
   border: none;
 }
 
+#aee-graph{
+  min-height: 480px;
+}
+
 .twitter-div{
-  margin-top: 15px;
+  margin-top: 45px;
+}
+
+.copyright{
+  margin-top: 30px;
+}
+@media screen and (max-width: 720px) {
+    body{
+      font-size: 17px;
+    }
+    .container{
+      padding: 10% 10%;
+    }
+    .hero{
+      max-height: 75vh;
+    }
+    h1{
+      font-size: 3em;
+    }
+    h3{
+      font-size: 1.25em;
+      line-height: 1.35em;
+    }
+    #aee-graph{
+      min-height: 300px;
+      padding-left: 0px;
+    }
+    .below-map{
+      padding-top: 0px;
+    }
+    .buttons{
+      display: flex;
+      flex-direction: row;
+      font-size: 13px;
+    }
+    .custom-btn{
+      border: none;
+      margin: 0px 1px;
+    }
 }

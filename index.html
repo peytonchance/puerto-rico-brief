@@ -18,31 +18,9 @@
 </head>
 
 <body>
-
-<!-- <div class="container-fluid">
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="#">Puerto Rico</a>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">News Coverage</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Twitter</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-</div> -->
 <div class="container-fluid hero">
   <h1>Puerto Rico</h1>
-  <p>The slow road to storm recovery</p>
+  <p>Covering the slow road to recovery</p>
 </div>
 <div class="container top-container">
   <div class="row">
@@ -56,7 +34,7 @@
 
       <h3>Power in Puerto Rico: What we know</h3>
       <p>The storm left Puerto Ricans with incredibly limited access to electric power. Hurricane Maria made landfall on the island on September 20, 2017. On September 29, more than a week after the storm hit, the Puerto Rico Electric Power Authority reported that just 5% of the island had power.</p>
-      <p>Over the last two months, the pace of recovery for the Puerto Rican power system has been glacial. The graph below displays the slow increase in power access through October and November 2017. To this day, more than 35% of the island is still without power.</p>
+      <p>Over the last two months, the pace of recovery for the Puerto Rican power system has been glacial. The graph below displays the slow increase in power access through October and November 2017. As of December 4, more than 30% of the island is still without power.</p>
     </div>
 
     <div class="col-12">
@@ -68,21 +46,21 @@
   <div class="row">
     <div class="col-12 map">
       <h3>Americans left in the dark</h3>
-      <p>As Puerto Rico is a U.S. territory, its residence are United States citizens. Puerto Rico is closer to Washington, D.C. than Los Angeles, yet its residents have received minimal assistance in restoring power.</p>
+      <p>As Puerto Rico is a U.S. territory, its residents are United States citizens. Puerto Rico is closer to Washington, D.C. than Los Angeles, yet its residents have received minimal assistance in restoring power.</p>
     </div>
     <div class="col-12">
       <div id="map"></div>
     </div>
   </div>
 </div>
-  <div class="container">
+  <div class="container below-map">
     <div class="col-12 button-div">
       <h3>Various outlets paint their own picture of the situation in Puerto Rico</h3>
       <p> The buttons below load recent articles about Puerto Rico from three major news outlets.</p>
       <div class="buttons">
-        <button onclick="getWPFeed();">From the Left</button>
-        <button onclick="getCNNFeed();">From the Center</button>
-        <button onclick="getFOXFeed();">From the Right</button>
+        <button class="custom-btn" onclick="getWPFeed();">From the Left</button>
+        <button class="custom-btn" onclick="getCNNFeed();">From the Center</button>
+        <button class="custom-btn" onclick="getFOXFeed();">From the Right</button>
       </div>
     </div>
     <div id="fox-feed">
@@ -93,13 +71,15 @@
     </div>
 
     <div class="col-12 twitter-div">
-      <h3>Puerto Rico on Twitter</h3>
+      <h3><a target="_blank" href="https://twitter.com/search?src=typd&q=%23puertorico">#PuertoRico</a> on Twitter</h3>
         <iframe src="http://peytonchance.com/mj487/apps/twitter/twitter/" class="twitter-box"></iframe>
     </div>
 
 
   </div>
-
+  <div class="container copyright">
+    <p>Copyright <a href="http://peytonchance.com" target="_blank">Peyton Chance, 2017.</a><p>
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -107,18 +87,32 @@
   <script src="js/d3.min.js"></script>
   <script src="js/c3.min.js"></script>
   <script src="js/creds.js"></script>
+  <script src="js/map-style.js"></script>
 
   <script>
     function initMap() {
-      var mapCenter = {lat: 18.400627, lng: -66.042280};
+      var mapCenter = {lat: 30.641219, lng: -92.440577};
+      var PRmarker = {lat: 18.400627, lng: -66.042280};
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 4,
-        center: mapCenter
+        center: mapCenter,
+        styles: customMapStyle
       });
       var marker = new google.maps.Marker({
-        position: mapCenter,
-        map: map
+        position: PRmarker,
+        map: map,
+        title: "San Juan, PR"
       });
+      var DCmarker = new google.maps.Marker({
+        position: {lat: 38.902063, lng: -77.044112},
+        map: map,
+        title: 'Washington, D.C.'
+ });
+ var LAmarker = new google.maps.Marker({
+   position: {lat: 33.989423, lng: -118.198918},
+   map: map,
+   title: 'Los Angeles, CA'
+});
     }
   </script>
   <script>
