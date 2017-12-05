@@ -74,13 +74,15 @@ h5{
 }
 #aee-graph{
   min-height: 400px;
-  padding-top: 15px;
   overflow: visible;
+  z-index: 1;
 }
 #graph-caption{
   margin-top: 15px;
   font-size: 0.8em;
-  float: right;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
 }
 #map{
   height: 400px;
