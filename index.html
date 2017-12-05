@@ -7,7 +7,9 @@
   <title>Covering Puerto Rico</title>
   <meta name="description" content="Covering Puerto Rico">
   <meta name="author" content="Peyton Chance">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lora|Roboto:400,500,700" rel="stylesheet">
+  <link href="css/c3.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
 
   <!--[if lt IE 9]>
@@ -16,6 +18,115 @@
 </head>
 
 <body>
+
+<!-- <div class="container-fluid">
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Puerto Rico</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">News Coverage</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Twitter</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div> -->
+<div class="container-fluid hero">
+  <h1>Puerto Rico</h1>
+  <p>The slow road to storm recovery</p>
+</div>
+<div class="container top-container">
+  <div class="row">
+    <div class="col-12">
+      <h5>By Peyton Chance</h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p>On this date, Hurricane Maria battered the island of Puerto Rico with winds up to this miles per hour. The storm destroyed the homes of hundreds of thousands of Puerto Ricans. The road to recovery has been marked with challenges and understanding these obstacles is only made more complicated by the varied coverage of the disaster by American news outlets.</p>
+
+      <h3>Power in Puerto Rico: What we know</h3>
+      <p>The storm left Puerto Ricans with incredibly limited access to electric power. Hurricane Maria made landfall on the island on September 20, 2017. On September 29, more than a week after the storm hit, the Puerto Rico Electric Power Authority reported that just 5% of the island had power.</p>
+      <p>Over the last two months, the pace of recovery for the Puerto Rican power system has been glacial. The graph below displays the slow increase in power access through October and November. To this day, more than 35% of the island is still without power.</p>
+    </div>
+
+    <div class="col-12">
+      <div id="aee-graph">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 map">
+      <h3>Americans left in the dark</h3>
+      <p>As Puerto Rico is a U.S. territory, its residence are United States citizens. Puerto Rico is closer to Washington, D.C. than Los Angeles, yet its residents have received minimal assistance in restoring power.</p>
+    </div>
+    <div class="col-12">
+      <div id="map"></div>
+    </div>
+  </div>
+</div>
+  <div class="container">
+    <div class="col-12 button-div">
+      <h3>Various outlets paint their own picture of the situation in Puerto Rico</h3>
+      <p> The buttons below load recent articles about Puerto Rico from three major news outlets.</p>
+      <div class="buttons">
+        <button onclick="getWPFeed();">From the Left</button>
+        <button onclick="getCNNFeed();">From the Center</button>
+        <button onclick="getFOXFeed();">From the Right</button>
+      </div>
+    </div>
+    <div id="fox-feed">
+    </div>
+    <div id="cnn-feed">
+    </div>
+    <div id="wp-feed">
+    </div>
+
+  </div>
+
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="js/d3.min.js"></script>
+  <script src="js/c3.min.js"></script>
+  <script src="js/creds.js"></script>
+
+  <script>
+    function initMap() {
+      var mapCenter = {lat: 18.400627, lng: -66.042280};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 4,
+        center: mapCenter
+      });
+      var marker = new google.maps.Marker({
+        position: mapCenter,
+        map: map
+      });
+    }
+  </script>
+  <script>
+  function loadScript() {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://maps.googleapis.com/maps/api/js?v=3' +
+        '&key=' + myMapsKey +'&callback=initMap';
+    document.body.appendChild(script);
+  }
+  window.onload = loadScript;
+  </script>
   <script src="js/scripts.js"></script>
 </body>
 </html>
