@@ -20,10 +20,10 @@ h4{
   font-family: 'Roboto';
 }
 h5{
-  font-size: 1.2em;
-  font-weight: bold;
-  font-family: 'Roboto';
-  margin-bottom: 25px;
+  font-size: 1em;
+font-weight: bold;
+font-family: 'Roboto';
+margin-bottom: 19px;
 }
 a{
   color: #285A7C;
@@ -35,7 +35,9 @@ a{
 .top-container{
   padding-top: 5%;
 }
-
+.post-map{
+  margin-top: 30px;
+}
 .hero{
   background-image: url('../img/puerto-rico-hero.JPG');
   background-repeat: no-repeat;
@@ -103,7 +105,8 @@ a{
 
 .button-div{
   margin-top: 30px;
-
+  width: 100%;
+  padding: 0;
 }
 .buttons{
   margin-top: 30px;
@@ -149,16 +152,28 @@ a{
 
 .copyright{
   margin-top: 30px;
+  font-family: 'Roboto';
+  padding-left: 40px;
+}
+
+.copyright a{
+  text-decoration: none;
 }
 @media screen and (max-width: 720px) {
     body{
       font-size: 17px;
     }
     .container{
-      padding: 10% 10%;
+      padding: 10% 5%;
     }
     .hero{
       max-height: 75vh;
+      display: flex;
+      justify-content: flex-end;
+      padding-left: 15px;
+    }
+    .hero p{
+      font-size: 0.9em;
     }
     h1{
       font-size: 3em;
@@ -182,5 +197,8 @@ a{
     .custom-btn{
       border: none;
       margin: 0px 1px;
+    }
+    .copyright{
+      margin-top: 0px;
     }
 }

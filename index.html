@@ -5,6 +5,7 @@
   <meta charset="utf-8">
 
   <title>Covering Puerto Rico</title>
+
   <meta name="description" content="Covering Puerto Rico">
   <meta name="author" content="Peyton Chance">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,11 +53,14 @@
     <div class="col-12">
       <div id="map"></div>
     </div>
+    <div class="col-12 post-map">
+      <p>It was announced last week that <a href="http://www.wral.com/wake-forest-firm-helping-get-the-lights-back-on-in-puerto-rico/17155094/" target="_blank">a Wake Forest, North Carolina-based firm</a> has been contracted to help get Puerto Rico's electric infrastructure back up and running.</p>
+    </div>
   </div>
 </div>
   <div class="container below-map">
     <div class="col-12 button-div">
-      <h3>Various outlets paint their own picture of the situation in Puerto Rico</h3>
+      <h3>News outlets paint varied pictures of the situation in Puerto Rico</h3>
       <p> The buttons below load recent articles about Puerto Rico from three major news outlets.</p>
       <div class="buttons">
         <button class="custom-btn" onclick="getWPFeed();">From the Left</button>
@@ -79,7 +83,7 @@
 
   </div>
   <div class="container copyright">
-    <p>Copyright <a href="http://peytonchance.com" target="_blank">Peyton Chance, 2017.</a><p>
+    <p>Copyright <a href="http://peytonchance.com" target="_blank">Peyton Chance</a> 2017.<p>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -95,7 +99,7 @@
       var mapCenter = {lat: 30.641219, lng: -92.440577};
       var PRmarker = {lat: 18.400627, lng: -66.042280};
       var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
+        zoom: 3,
         center: mapCenter,
         styles: customMapStyle
       });
